@@ -1,0 +1,9 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  background: yellow;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100vw;
+  height: 50px;
+}
