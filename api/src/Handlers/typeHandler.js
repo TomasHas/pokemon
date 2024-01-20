@@ -1,15 +1,16 @@
 const { Type } = require("../db");
-const { getTypesApi } = require("../controllers/controllersApi");
+const { fetchTypesApi, getTypesDB } = require("../controllers/typesController");
 
-const postTypes = async (req, res) => {
+const getTypes = async (req, res) => {
   try {
-    const types = await getTypesApi();
+    const types = await fetchTypesApi();
 
-    const dbData = await Type.bulkCreate(types);
-    res.status(200).send(dbData);
+    const findDB = await Type.findAll();
+
+    res.status(200).send(findDB);
   } catch (error) {
     res.status(400).send(error.message);
   }
 };
 
-module.exports = { postTypes };
+module.exports = { getTypes };

@@ -1,0 +1,102 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-top: 30px;
+  gap: 20px;
+}
+
+.input_container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.input_sections {
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+}
+h1 {
+  text-align: start;
+}
+form h1 {
+  color: coral;
+}
+.container {
+  background-color: rgb(25, 59, 59);
+  height: 100vh;
+}
+form label {
+  color: coral;
+}
+form input {
+  border-radius: 10px;
+  height: 40px;
+  width: 200px;
+  border: solid coral;
+  background-color: transparent;
+  padding: 5px;
+  color: white;
+}
+
+form button {
+  width: 100px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+form section {
+  display: flex;
+  flex-direction: column;
+}
+
+form article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+
+  width: 200px;
+}
+
+.types_option {
+  width: 200px;
+  /* background-color: blue; */
+  border: solid coral;
+}
+form select {
+  border-radius: 10px;
+  height: 40px;
+  width: 400px;
+
+  padding: 5px;
+}
+
+form p {
+  font-size: 10px;
+  color: red;
+}
+
+.button_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.submit_btn {
+  background-color: royalblue;
+  color: white;
+  font-weight: 800;
+  width: 130px;
+}
+
+.reset_btn {
+  background-color: tomato;
+  color: white;
+  font-weight: 800;
+  width: 70px;
+}

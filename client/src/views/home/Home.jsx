@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch, useStore } from "react-redux";
 import CardContainer from "../../components/cardContainer/CardContainer";
 import Pagination from "../../components/pagination/Pagination";
-import { fetchPokemons } from "../../features/pokemons/pokemonSlice";
+import { fetchPokemons } from "../../features/pokemonSlice";
 import styles from "./home.module.css";
+import Filters from "../../components/filters/Filters";
 
 function Home() {
   const data = useSelector((state) => state.pokemon.filteredPokemons);
@@ -11,7 +12,8 @@ function Home() {
   // console.log(data.length);
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(8);
+  const [itemsPerPage] = useState(10);
+  const [showFilters, setShowFilters] = useState(true);
   const totalItems = data.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   // console.log("currentPage", currentPage);

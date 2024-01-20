@@ -30,11 +30,12 @@ export const fetchPokemons = createAsyncThunk(
 export const getPokemonById = createAsyncThunk(
   "pokemons/getPokemonById",
   async (id) => {
-    console.log("id", id);
+    // console.log("id", id);
+
     try {
       const response = await axios.get(`http://localhost:3001/pokemons/${id}`);
-      // console.log("response.id ", response.data.result);
-      return response.data.result;
+      // console.log("response.id ", response.data);
+      return response.data;
     } catch (error) {
       throw error;
     }
@@ -47,7 +48,7 @@ const pokemonsSlice = createSlice({
   initialState,
   reducers: {
     setFilteredPokemons: (state, action) => {
-      console.log("action filter", action.payload);
+      // console.log("action filter", action.payload);
       state.filteredPokemons = action.payload;
     },
   },
@@ -63,7 +64,7 @@ const pokemonsSlice = createSlice({
       })
       .addCase(fetchPokemons.rejected, (state, action) => {
         state.pokeStatus = "failed";
-        state.error = action.error.message;
+        state.pokeError = action.error.message;
       })
       .addCase(getPokemonById.pending, (state) => {
         state.detailStatus = "loading";

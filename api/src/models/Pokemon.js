@@ -17,7 +17,7 @@ module.exports = (sequelize) => {
         allowNull: false,
         unique: true,
       },
-      pokemonType: {
+      types: {
         type: DataTypes.ARRAY(DataTypes.STRING),
         allowNull: false,
         // references: {

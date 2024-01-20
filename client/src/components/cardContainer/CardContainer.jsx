@@ -6,7 +6,7 @@ function CardContainer(pokeData) {
   return (
     <div className={styles.container}>
       {pokeData.data.map((e, i) => (
-        <Card key={i} name={e.name} image={e.image} type={e.type} id={e.id} />
+        <Card key={i} name={e.name} image={e.image} type={e.types} id={e.id} />
       ))}
     </div>
   );
