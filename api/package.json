@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -L",
-    "test": "mocha -w ./tests/**/*.spec.js"
+    "start": "node index.js nodemon -L",
+    "test": "mocha -w ./tests/**/*.spec.js",
+    "build": "echo \"No build specified\" && exit 1 echo \"No test specified\" && exit 1"
   },
   "author": "Henry",
   "license": "ISC",
