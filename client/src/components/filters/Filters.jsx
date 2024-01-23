@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setFilteredPokemons } from "../../features/pokemonSlice";
-import { getTypes } from "../../features/typesSlice";
 
+import { FaAngleDown } from "react-icons/fa";
 import styles from "./filters.module.css";
 const Filters = () => {
   let pokemons = useSelector((state) => state.pokemon.pokemons);
@@ -106,9 +106,19 @@ const Filters = () => {
         </button>
       </article>
 
-      <article className={styles.filter_items}>
-        <h3>Sort A - Z</h3>
+      <div className={styles.sortAz}>
+        <button>
+          <h3>A - Z</h3>
+        </button>{" "}
+        <FaAngleDown />
+      </div>
+
+      {/* <article className={styles.filter_items}>
+        {" "}
         <select name="alphabet" id="alphabet" onChange={handleInputChange}>
+          <option key="title" value="title" className={styles.option_title}>
+            Sort A-Z
+          </option>
           <option key="none" value="none">
             None
           </option>
@@ -119,7 +129,7 @@ const Filters = () => {
             Z - A
           </option>
         </select>
-      </article>
+      </article> */}
       <article className={styles.filter_items}>
         <h3>Attack</h3>
         <select name="attack" id="attack" onChange={handleInputChange}>

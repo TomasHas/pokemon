@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./form.module.css";
+import { FaBars } from "react-icons/fa6";
 const Form = () => {
   const types = useSelector((state) => state.types.types);
   const [formValues, setFormValues] = useState({
@@ -297,8 +298,7 @@ const Form = () => {
               </article>{" "}
               <article>
                 {" "}
-                <label htmlFor="">image</label>
-                <div>
+                <div className={styles.submit_container}>
                   <button
                     type="submit"
                     onClick={handleSubmit}

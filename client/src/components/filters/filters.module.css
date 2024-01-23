@@ -1,5 +1,5 @@
 .container {
-  background-color: red;
+  background-color: transparent;
   padding: 15px;
   width: 100%;
   display: flex;
@@ -29,7 +29,7 @@ section {
   border-radius: 10px;
   border: none;
   height: 30px;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 .search button {
@@ -44,7 +44,10 @@ section {
 button h3 {
   color: white;
 }
-article h3 {
+h3 {
+  color: yellow;
+}
+.option_title {
   color: yellow;
 }
 
@@ -55,7 +58,14 @@ article h2 {
 .filter_items {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+}
+.sortAz {
+  display: flex;
+  flex-direction: row;
+  color: yellow;
+  gap: 10px;
+  cursor: pointer;
 }
 
 select {
@@ -70,6 +80,17 @@ select {
 option {
   vertical-align: center;
   margin-right: 3px;
-  background-color: red;
+  background-color: tomato;
   gap: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 1000px) {
+}
+@media screen and (max-width: 700px) {
+}
+
+@media screen and (max-width: 430px) {
 }

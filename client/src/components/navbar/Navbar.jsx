@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import styles from "./navbar.module.css";
 import Filters from "../filters/Filters";
 import { useLocation } from "react-router-dom";
+import { FaBars } from "react-icons/fa6";
 function Navbar() {
-  const [toggleFilters, setToggleFilters] = useState(false);
+  const [toggleFilters, setToggleFilters] = useState(true);
+
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   console.log(toggleFilters);
@@ -19,6 +21,8 @@ function Navbar() {
   return (
     <nav>
       <div className={styles.navbar_container}>
+        {" "}
+        <FaBars className={styles.hamburger} />
         <div className={styles.items}>
           <a href="/">
             <h3>Home</h3>
@@ -29,13 +33,13 @@ function Navbar() {
             <h3>Create Pokemon</h3>
           </a>
         </div>{" "}
-        <div className={styles.items}>
+        <div className={styles.itemFilter}>
           {isHomePage && (
             <button onClick={handleClick}>
               <h2>Filters</h2>
             </button>
           )}
-        </div>
+        </div>{" "}
         <div className={styles.filters}>
           {isHomePage && (
             <div className={styles.filters_container}>
@@ -43,7 +47,7 @@ function Navbar() {
             </div>
           )}
         </div>
-      </div>
+      </div>{" "}
     </nav>
   );
 }
