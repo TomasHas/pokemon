@@ -5,7 +5,8 @@ import Filters from "../filters/Filters";
 import { useLocation } from "react-router-dom";
 import { FaBars } from "react-icons/fa6";
 function Navbar() {
-  const [toggleFilters, setToggleFilters] = useState(true);
+  const [toggleFilters, setToggleFilters] = useState(false);
+  const [showNavItems, setShowNavItems] = useState(false);
 
   const location = useLocation();
   const isHomePage = location.pathname === "/";
@@ -18,11 +19,32 @@ function Navbar() {
 
     setToggleFilters(() => !toggleFilters);
   };
+
+  const handleBurgerClick = () => {
+    setShowNavItems(() => !showNavItems);
+  };
   return (
     <nav>
+      {" "}
+      {showNavItems && (
+        <div className={styles.burger_menu}>
+          <div className={styles}>
+            <a href="/">
+              <h3>Home</h3>
+            </a>
+          </div>
+          <div className={styles}>
+            <a href="/form">
+              <h3>Create Pokemon</h3>
+            </a>
+          </div>
+        </div>
+      )}
       <div className={styles.navbar_container}>
         {" "}
-        <FaBars className={styles.hamburger} />
+        <div className={styles.burger_container}>
+          <FaBars className={styles.hamburger} onClick={handleBurgerClick} />
+        </div>
         <div className={styles.items}>
           <a href="/">
             <h3>Home</h3>

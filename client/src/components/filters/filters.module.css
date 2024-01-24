@@ -24,12 +24,23 @@ section {
 
 .search {
   gap: 10px;
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
 }
 .search_input {
   border-radius: 10px;
   border: none;
   height: 30px;
+
   /* padding: 10px; */
+}
+
+.search_icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
 }
 
 .search button {
@@ -90,7 +101,63 @@ option {
 @media screen and (max-width: 1000px) {
 }
 @media screen and (max-width: 700px) {
+  .container {
+    background-color: rgb(25, 59, 59);
+
+    flex-direction: column;
+
+    opacity: 95%;
+  }
+  .dropdown_menu {
+    position: relative;
+    margin: -70% 0 0 250%;
+    flex-direction: row;
+  }
 }
 
 @media screen and (max-width: 430px) {
+}
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  size: 30px;
+  gap: 10px;
+}
+.button h3 {
+  color: yellow;
+  min-width: 50px;
+}
+.angleDown {
+  height: 30px;
+}
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 80px;
+  position: relative;
+}
+.dropdown_menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 120%;
+  min-width: 80px;
+  top: 100%;
+  padding: 10px 0 10px 0;
+  gap: 6px;
+  background-color: rgb(25, 59, 59);
+  border-radius: 10px;
+  border: solid coral;
+}
+.dropdown_menu_item {
+  color: white;
+  cursor: pointer;
+  width: 100%;
+}
+
+.dropdown_menu_item:hover {
+  background-color: coral;
 }
